@@ -1,0 +1,211 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Smart Registration Portal">
+  <title>Smart Registration Portal</title>
+
+  <link rel="stylesheet" href="style.css">
+  <script src="script.js" defer></script>
+</head>
+
+<body>
+  <main class="page">
+    <section class="form-card">
+
+      <!-- Theme switch -->
+      <div class="theme-controls">
+        <button
+          type="button"
+          id="theme-toggle"
+          class="theme-toggle"
+          aria-label="Switch to dark mode"
+          aria-pressed="false"
+        >
+          <span id="theme-icon" aria-hidden="true">☾</span>
+          <span id="theme-label">Dark mode</span>
+        </button>
+      </div>
+
+      <!-- Header -->
+      <header class="form-header">
+        <div class="brand-mark" aria-label="Smart Registration Portal logo">S</div>
+
+        <p class="eyebrow">WELCOME TO APPLICATION</p>
+        <h1>Create your account</h1>
+        <p class="subtitle">Enter your details to get started.</p>
+      </header>
+
+      <!-- Progress bar -->
+      <div class="progress-section">
+        <div class="progress-label">
+          <span>Form completion</span>
+          <span id="progress-text">0%</span>
+        </div>
+
+        <div
+          class="progress-track"
+          id="progress-track"
+          role="progressbar"
+          aria-label="Form completion"
+          aria-valuemin="0"
+          aria-valuemax="100"
+          aria-valuenow="0"
+        >
+          <div class="progress-fill" id="progress-fill"></div>
+        </div>
+      </div>
+
+      <!-- Registration form -->
+      <form id="registration-form" novalidate>
+
+        <div class="form-group">
+          <label for="fullName">Full name</label>
+          <input
+            type="text"
+            id="fullName"
+            name="fullName"
+            placeholder="Enter your full name"
+            autocomplete="name"
+            aria-describedby="fullName-error"
+            required
+          >
+          <small class="error" id="fullName-error"></small>
+        </div>
+
+        <div class="form-group">
+          <label for="age">Age</label>
+          <input
+            type="number"
+            id="age"
+            name="age"
+            placeholder="Enter your age"
+            min="18"
+            max="100"
+            step="1"
+            inputmode="numeric"
+            aria-describedby="age-error"
+            required
+          >
+          <small class="error" id="age-error"></small>
+        </div>
+
+        <div class="form-group">
+          <label for="email">Email address</label>
+          <input
+            type="email"
+            id="email"
+            name="email"
+            placeholder="you@example.com"
+            autocomplete="email"
+            aria-describedby="email-error"
+            required
+          >
+          <small class="error" id="email-error"></small>
+        </div>
+
+        <div class="form-group">
+          <label for="mobile">Mobile number</label>
+          <input
+            type="tel"
+            id="mobile"
+            name="mobile"
+            placeholder="Enter 10-digit mobile number"
+            maxlength="10"
+            inputmode="numeric"
+            autocomplete="tel-national"
+            aria-describedby="mobile-error"
+            required
+          >
+          <small class="error" id="mobile-error"></small>
+        </div>
+
+        <div class="form-group">
+          <label for="password">Password</label>
+
+          <div class="password-wrapper">
+            <input
+              type="password"
+              id="password"
+              name="password"
+              placeholder="Create a strong password"
+              autocomplete="new-password"
+              aria-describedby="password-strength password-error"
+              required
+            >
+
+            <button
+              type="button"
+              class="toggle-password"
+              data-target="password"
+              aria-label="Show password"
+              aria-pressed="false"
+            >Show</button>
+          </div>
+
+          <div class="strength-track" aria-hidden="true">
+            <div id="strength-fill"></div>
+          </div>
+
+          <small id="password-strength" class="strength-text">
+            Use 8+ characters with uppercase, lowercase, a number and a special character.
+          </small>
+
+          <small class="error" id="password-error"></small>
+        </div>
+
+        <div class="form-group">
+          <label for="confirmPassword">Confirm password</label>
+
+          <div class="password-wrapper">
+            <input
+              type="password"
+              id="confirmPassword"
+              name="confirmPassword"
+              placeholder="Re-enter your password"
+              autocomplete="new-password"
+              aria-describedby="confirmPassword-error"
+              required
+            >
+
+            <button
+              type="button"
+              class="toggle-password"
+              data-target="confirmPassword"
+              aria-label="Show confirm password"
+              aria-pressed="false"
+            >Show</button>
+          </div>
+
+          <small class="error" id="confirmPassword-error"></small>
+        </div>
+
+        <!-- Submit button -->
+        <button type="submit" class="submit-button">
+          Submit <span aria-hidden="true">→</span>
+        </button>
+
+        <p
+          id="success-message"
+          class="success-message"
+          role="status"
+          aria-live="polite"
+          hidden
+        ></p>
+
+      </form>
+
+      <!-- Footer -->
+      <footer class="form-footer">
+        <p>Smart Registration Portal</p>
+        <p class="footer-note">
+          A simple, secure and user-friendly experience.
+        </p>
+      </footer>
+
+    </section>
+  </main>
+</body>
+</html>
